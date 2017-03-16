@@ -8,7 +8,7 @@
 namespace Tappleby\AuthToken;
 
 
-use Illuminate\Encryption\DecryptException;
+use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Encryption\Encrypter;
 
 abstract class AbstractAuthTokenProvider implements AuthTokenProviderInterface {
