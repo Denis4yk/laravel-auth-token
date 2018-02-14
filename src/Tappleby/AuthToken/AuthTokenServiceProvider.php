@@ -24,7 +24,7 @@ class AuthTokenServiceProvider extends ServiceProvider
 		    __DIR__.'/../../migrations/' => database_path('/migrations')
 		], 'migrations');
 
-		$this->app['router']->filter('auth.token', 'tappleby.auth.token.filter');
+//		$this->app['router']->filter('auth.token', 'tappleby.auth.token.filter');
 	}
 
 
@@ -41,12 +41,12 @@ class AuthTokenServiceProvider extends ServiceProvider
 			return new AuthTokenManager($app);
 		});
 
-		$app->singleton('tappleby.auth.token.filter', function ($app) {
+		/*$app->singleton('tappleby.auth.token.filter', function ($app) {
 			$driver = $app['tappleby.auth.token']->driver();
       $events = $app['events'];
 
       return new AuthTokenFilter($driver, $events);
-		});
+		});*/
 
 		$app->bind('Tappleby\AuthToken\AuthTokenController', function ($app) {
 			$driver = $app['tappleby.auth.token']->driver();
