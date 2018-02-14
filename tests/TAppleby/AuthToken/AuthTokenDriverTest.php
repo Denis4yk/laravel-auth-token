@@ -116,7 +116,6 @@ class AuthTokenDriverTest extends PHPUnit_Framework_TestCase {
     $users->shouldReceive('retrieveByCredentials')->once()->andReturn($user);
     $users->shouldReceive('validateCredentials')->once()->andReturn(true);
 
-    $tokens->shouldReceive('purge')->once();
     $tokens->shouldReceive('create')->once()->andReturn($authToken);
 
     $driver = new \Tappleby\AuthToken\AuthTokenDriver($tokens, $users);

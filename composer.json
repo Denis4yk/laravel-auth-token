@@ -8,8 +8,10 @@
         }
     ],
     "require": {
-        "php": ">=5.3.0",
-        "illuminate/support": "~5.0"
+        "php": ">=7.0.0",
+        "illuminate/support": "5.2.*",
+        "illuminate/encryption": "5.2.*",
+        "illuminate/database": "5.2.*"
     },
 
     "require-dev": {
@@ -26,5 +28,5 @@
             "Tappleby\\Support": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }

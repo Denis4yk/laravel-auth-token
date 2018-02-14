@@ -9,7 +9,11 @@ namespace Tappleby\Support\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class AuthToken extends Facade {
+class AuthToken extends Facade
+{
 
-  protected static function getFacadeAccessor() { return 'tappleby.auth.token'; }
+    protected static function getFacadeAccessor()
+    {
+        return 'tappleby.auth.token';
+    }
 }

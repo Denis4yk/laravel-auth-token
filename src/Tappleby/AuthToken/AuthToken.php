@@ -9,63 +9,60 @@ namespace Tappleby\AuthToken;
 
 use Illuminate\Contracts\Support\Arrayable;
 
-class AuthToken implements Arrayable {
+class AuthToken implements Arrayable
+{
+    protected $authIdentifier;
+    protected $publicKey;
+    protected $privateKey;
 
+    function __construct($authIdentifier, $publicKey, $privateKey)
+    {
+        $this->authIdentifier = $authIdentifier;
+        $this->publicKey = $publicKey;
+        $this->privateKey = $privateKey;
+    }
 
-  protected $authIdentifier;
-  protected $publicKey;
-  protected $privateKey;
+    public function getAuthIdentifier()
+    {
+        return $this->authIdentifier;
+    }
 
-  function __construct($authIdentifier, $publicKey, $privateKey)
-  {
-    $this->authIdentifier = $authIdentifier;
-    $this->publicKey = $publicKey;
-    $this->privateKey = $privateKey;
-  }
+    public function setAuthIdentifier($authIdentifier)
+    {
+        $this->authIdentifier = $authIdentifier;
+    }
 
-  public function getAuthIdentifier()
-  {
-    return $this->authIdentifier;
-  }
+    public function getPrivateKey()
+    {
+        return $this->privateKey;
+    }
 
-  public function setAuthIdentifier($authIdentifier)
-  {
-    $this->authIdentifier = $authIdentifier;
-  }
+    public function setPrivateKey($privateKey)
+    {
+        $this->privateKey = $privateKey;
+    }
 
-  public function getPrivateKey()
-  {
-    return $this->privateKey;
-  }
+    public function getPublicKey()
+    {
+        return $this->publicKey;
+    }
 
-  public function getPublicKey()
-  {
-    return $this->publicKey;
-  }
+    public function setPublicKey($publicKey)
+    {
+        $this->publicKey = $publicKey;
+    }
 
-  public function setPrivateKey($privateKey)
-  {
-    $this->privateKey = $privateKey;
-  }
-
-  public function setPublicKey($publicKey)
-  {
-    $this->publicKey = $publicKey;
-  }
-
-  /**
-   * Get the instance as an array.
-   *
-   * @return array
-   */
-  public function toArray()
-  {
-    return array(
-      'auth_identifier' => $this->authIdentifier,
-      'public_key' => $this->publicKey,
-      'private_key' => $this->privateKey
-    );
-  }
-
-
+    /**
+     * Get the instance as an array.
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        return array(
+            'auth_identifier' => $this->authIdentifier,
+            'public_key'      => $this->publicKey,
+            'private_key'     => $this->privateKey
+        );
+    }
 }
